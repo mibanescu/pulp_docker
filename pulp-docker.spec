@@ -2,13 +2,13 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
 
 # The release number
-%global release_number 0.1.alpha
+%global release_number 0.4.rc
 
 # Create tag for the Source0 and setup
 %global git_tag %{name}-%{version}-%{release_number}
 
 Name: pulp-docker
-Version: 2.5.0
+Version: 3.1.1
 Release: %{release_number}%{?dist}
 Summary: Support for Docker layers in the Pulp platform
 Group: Development/Languages
@@ -26,7 +26,7 @@ Provides a collection of platform plugins and admin client extensions to
 provide docker support
 
 %prep
-%setup -q -n pulp_docker-%{git_tag}
+%setup -q
 
 %build
 pushd common
